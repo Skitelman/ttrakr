@@ -1,0 +1,10 @@
+<h1><%= @lesson.title %></h1>
+<p>
+  <%= @lesson.notes %>
+</p>
+<h3>Shirts</h3>
+<ul>
+  <% @lesson.shirts.each do |shirt| %>
+  <li><%= shirt.name %></li>
+  <% end %>
+</ul>
