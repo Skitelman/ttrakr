@@ -8,3 +8,15 @@
   <li><%= shirt.name %></li>
   <% end %>
 </ul>
+
+<%= form_for [@lesson, Comment.new] do |f| %>
+  <div>
+    <%= f.text_area :content, placeholder: "Be Nice" %>
+  </div>
+  <%= f.submit %>
+<% end %>
+<ul>
+  <% @lesson.comments.each do |comment| %>
+  <li><%= comment.content%> by <%= comment.user.name %></li>
+  <% end %>
+</ul>
